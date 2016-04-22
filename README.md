@@ -504,6 +504,11 @@ Also do not overuse Integration test. Keepin mind that in any (ANY!) case Integr
 * [Poltergeist](https://github.com/teampoltergeist/poltergeist) (PhantomJS)
 * [Capibara-WebKit](https://github.com/thoughtbot/capybara-webkit)
 
+### Test data: Fixtures vs Factories
+
+* Factory Girl
+* Faker
+
 ### Stub external services call
 
 Your test should not depend on availability of external services on each run. Ideally you shoud be able to run all tests without the Internet access. But that doesn't mean that external integrations should not be tested.
