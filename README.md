@@ -141,6 +141,8 @@ Let's see the most notable:
 
 It propose cleaner approach with less metaprogramming. The most interesting architectural decisions are: multi app architecture with shared parts (that delays and simplify decision to break your app into smaller parts), Data Mapper/Entity-Repository approach for persistence layer, separating actions, explicit variables exposition to views, etc.
 
+* [What is Hanami? Where is it going?](https://discuss.hanamirb.org/t/what-is-hanami-where-is-it-going/222)
+
 ### Specialized 
 
 #### [Grape](http://www.ruby-grape.org/)
