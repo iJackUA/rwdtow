@@ -4,12 +4,14 @@ title: 'Ruby Web Dev The Other Way'
 subtitle: '"When Rails is not enough..."'
 ---
 
+<div id="toc"></div>
+
 <div class="posts-list">
 {% assign ordered_posts = paginator.posts | sort: 'order' %}
   {% for post in ordered_posts %}
   <article class="post-preview">
     <a href="#{{ post.id | slugify }}">
-	  <h2 class="post-title">{{ post.title }}</h2>
+	  <h2 class="post-title" data-toc="#{{ post.id | slugify }}">{{ post.title }}</h2>
     </a>
 
     <div class="post-entry">
