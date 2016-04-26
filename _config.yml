@@ -24,7 +24,7 @@ description: When Rails is not enough!
 # List of links in the navigation bar
 navbar-links:
   Fork me on GitHub: "https://github.com/iJackUA/Ruby-Web-Dev-The-Other-Way"
-  About: "aboutme"
+  About: "about"
   Blog: "http://stdout.in"
 
 # Image to show in the navigation bar - image must be a square (width = height)
@@ -73,11 +73,14 @@ timezone: "Europe/Kiev"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 5
 
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+gems: [jekyll-paginate]
+paginate: 5
+paginate_path: "page:num"
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
@@ -102,4 +105,3 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-  - Vagrantfile

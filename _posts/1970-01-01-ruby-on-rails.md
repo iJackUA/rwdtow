@@ -8,7 +8,7 @@ Most of current Ruby developers came in this ecosystem via Rails. It is a good s
 
 TODO: Add more points to be aware of in Rails
 
-### Confusing environments
+## Confusing environments
 
 Rails comes with the following ways to alter config according to environment
 
@@ -20,7 +20,7 @@ Rails comes with the following ways to alter config according to environment
 Often all these ways are mixed without any separation and consideration.
 Mostly all these ways could be replaces by `ENV` vars to change value of primitive configs and env initializers to make bigger structural changes in init flow.
 
-### You don't need an ActiveRecord for every kind of Model
+## You don't need an ActiveRecord for every kind of Model
 
 What Rails teachs you the first is to model data by AR classes. And that works great while you are "on the Rails Way". But unfortunately that also teaches to think that Model structure is unbreakable from persistence layer (literally from DB table structure).
 
@@ -33,7 +33,7 @@ That causes issues:
 You need to understand that even PORO could be a Model while it encapsulate Data and Actions on some entity. And it is not a must for Model to have `find` and `save` actions (it is merely Active Record pattern, recognize it!). You can (and ideally should) separate Model as data container and some other classes to handle persistency. And it does not matter do we get/save it into DB or get/send it via REST API. 
 
 
-### Before filter/action
+## Before filter/action
 
 The main purpose of `before_action` hook is to authorize action call. Literally decide allow this user to run the action or not. But often we can find "pre-population" code like this:
 

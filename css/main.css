@@ -35,7 +35,7 @@ a[href^="http://"]:before, a[href^="https://"]:before {
     padding-right: 5px;
 }
 
-.avatar-container a:before, a.navbar-brand:before {
+.avatar-container a:before, a.navbar-brand:before, .footer-links a:before {
   content: "";
   padding-right: 0;
 }
