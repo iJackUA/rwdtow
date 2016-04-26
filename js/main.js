@@ -120,10 +120,7 @@ var main = {
         },
         'headerText': function(i, heading, $heading) { //custom function building the header-item text
             return $heading.text();
-        },
-    'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
-      return $heading[0].tagName.toLowerCase();
-    }
+        }
     });
   }
 };

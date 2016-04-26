@@ -1,23 +1,13 @@
-/*#toc {
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    position: fixed;
-    background: #333;
-    box-shadow: inset -5px 0 5px 0px #000;
-    width: 150px;
-    padding-top: 20px;
-    color: #fff;
-}*/
-
 #toc ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    font-size: 0.8em;
 }
 
 #toc li {
-    padding: 5px 10px;
+    padding: 0;
+    margin: 0;
 }
 
 #toc a {
@@ -35,6 +25,5 @@
 }
 
 #toc .toc-active {
-    background: #336699;
-    box-shadow: inset -5px 0px 10px -5px #000;
+    background: #D5EAFF;
 }

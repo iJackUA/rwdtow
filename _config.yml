@@ -79,7 +79,7 @@ kramdown:
   syntax_highlighter: rouge
 
 gems: [jekyll-paginate]
-paginate: 5
+paginate: 1000
 paginate_path: "page:num"
 
 # Default YAML values (more information on Jekyll's site)

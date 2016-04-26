@@ -4,8 +4,6 @@ title: Architecture
 order: 60
 ---
 
-## Architecture
-
 MVC is not an app architecture. This idea is not so obvious due to reign of MVC-based frameworks, that teaches us to use Routing + Model + View render as the way to build web apps. Unfortunately Business Logic of the app has no place in this list.
 
 "Fat Model, Skinny Controller" approach also does not solve the issue. It just swipes the dust under the carpet, but you will still suffer from Fat Models with numerous contexts. Changing code for one usage context will break another usage context.

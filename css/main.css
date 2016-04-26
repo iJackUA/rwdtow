@@ -44,6 +44,11 @@ blockquote {
   color: #808080;
   font-style: italic;
 }
+
+blockquote p {
+  margin-top: 0px;
+}
+
 hr.small {
   max-width: 100px;
   margin: 15px auto;
@@ -300,7 +305,7 @@ footer .theme-by {
 
 .post-preview a {
   text-decoration: none;
-  color: #404040;
+  color: #0085a1;
 }
 
 .post-preview a:focus,
