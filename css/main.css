@@ -28,6 +28,18 @@ a:hover,
 a:focus {
   color: #0085a1;
 }
+
+a[href^="http://"]:before, a[href^="https://"]:before {
+    font-family: 'FontAwesome';
+    content: " \f08e";
+    padding-right: 5px;
+}
+
+.avatar-container a:before, a.navbar-brand:before {
+  content: "";
+  padding-right: 0;
+}
+
 blockquote {
   color: #808080;
   font-style: italic;
