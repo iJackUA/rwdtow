@@ -10,9 +10,7 @@ subtitle: '"When Rails is not enough..."'
 {% assign ordered_posts = paginator.posts | sort: 'order' %}
   {% for post in ordered_posts %}
   <article class="post-preview">
-    <a href="#{{ post.id | slugify }}">
-	  <h1 class="post-title" data-toc="#{{ post.id | slugify }}">{{ post.title }}</h2>
-    </a>
+	  <h1 class="post-title" id="{{ post.id | slugify }}">{{ post.title }}</h2>
 
     <div class="post-entry">
       {{ post.content }}

@@ -29,7 +29,7 @@ a:focus {
   color: #0085a1;
 }
 
-a[href^="http://"]:before, a[href^="https://"]:before {
+.posts-list a[href^="http://"]:before, .posts-list a[href^="https://"]:before {
     font-family: 'FontAwesome';
     content: " \f08e";
     padding-right: 5px;
@@ -563,4 +563,13 @@ table tr td :first-child {
 table tr th :last-child,
 table tr td :last-child {
   margin-bottom: 0;
+}
+
+.social-buttons {
+  font-size: 3em;
+  text-align: center;
+}
+
+.social-buttons a {
+  text-decoration: none;
 }

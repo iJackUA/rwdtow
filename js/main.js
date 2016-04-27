@@ -116,7 +116,7 @@ var main = {
         'highlightOnScroll': true, //add class to heading that is currently in focus
         'highlightOffset': 100, //offset to trigger the next headline
         'anchorName': function(i, heading, prefix) { //custom function for anchor name
-            return $(heading).data('toc');
+            return $(heading).attr('id');
         },
         'headerText': function(i, heading, $heading) { //custom function building the header-item text
             return $heading.text();
