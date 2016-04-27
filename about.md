@@ -33,5 +33,9 @@ title: About
 		<i class="fa fa-xing-square" aria-hidden="true"></i>
     </a>
 
+    <a href="https://getpocket.com/edit?url={{ site.url }}" target="_blank">
+		<i class="fa fa-get-pocket" aria-hidden="true"></i>
+    </a>
+
 </div>
 
