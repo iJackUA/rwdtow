@@ -573,3 +573,7 @@ table tr td :last-child {
 .social-buttons a {
   text-decoration: none;
 }
+
+.github-buttons {
+  padding:12px;
+}
