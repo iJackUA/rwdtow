@@ -13,7 +13,7 @@ Or a custom Deploy workflow for big projects with tools like Ansible
 
 ### VPS, Dedicated server
 
-* [DigitalOcean](https://m.do.co/c/20534050b97f) (my ref link ;) )
+* [DigitalOcean](https://m.do.co/c/20534050b97f) (my ref link ;) you receive $10 credit after registration)
 * [Amazon Web Services]()
 * [Namecheap, domains registrator](https://www.namecheap.com/?aff=62428) (my ref link ;) )
 
