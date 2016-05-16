@@ -27,6 +27,7 @@ Also Sandi Matz in the "Practical Object-Oriented Design in Ruby: An Agile Prime
 * **E**xemplary - The code itself should encourage those who change it to perpetuate these qualities
 
 TODO: Describe approaches like Form Model, Service Object, Context
+* [Gem: Active Interaction](https://github.com/orgsync/active_interaction)
 
 * [SOLID Design Principles](https://www.practicingruby.com/articles/solid-design-principles)
 
