@@ -159,6 +159,7 @@ Is a collection of next-generation Ruby libraries, each intended to encapsulate 
 TODO: Add extended dry-rb gems description
 
 * [dry-rb](http://dry-rb.org/)
+* [list of all dry gems](http://dry-rb.org/gems/)
 
 ### Learn OOP design
 

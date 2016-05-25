@@ -26,7 +26,8 @@ An opinionated framework for creating REST-like APIs in Ruby. It has built-in su
 Mini framework are concentrating to provide us with web requests routing layer. And leaving everything else on us.
 All Ruby web frameworks are supporting or based on Rack - a Ruby Webserver Interface (it standartizes the minimal interface to get web .request, handle it and return response). The main thing to know here is that thanks to Rack we can combine a chain of Middlewares (small specific handlers) that gives us such basic things as variables parsing, handling cookies and session, etc - thins that we tend to consider as a "given".
 
-* [Sinatra](http://www.sinatrarb.com/)
-* [Padrino](http://padrinorb.com/)
 * [dry-web](https://github.com/dry-rb/dry-web)
+* [Padrino](http://padrinorb.com/)
 * [Rack](http://rack.github.io/)
+* [Roda](http://roda.jeremyevans.net)
+* [Sinatra](http://www.sinatrarb.com/)
