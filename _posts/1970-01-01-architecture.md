@@ -161,6 +161,65 @@ TODO: Add extended dry-rb gems description
 * [dry-rb](http://dry-rb.org/)
 * [list of all dry gems](http://dry-rb.org/gems/)
 
+### [Rectify](https://github.com/andypike/rectify)
+
+Rectify is a gem that provides some lightweight classes that will make it easier to build Rails applications in a more maintainable way. It's built on top of several other gems and adds improved APIs to make things easier.
+
+Currently, Rectify consists of the following concepts:
+
+* Form Objects
+* Commands
+* Presenters
+* Query Objects
+
+You can use these separately or together to improve the structure of your Rails applications.
+
+The main problem that Rectify tries to solve is where your logic should go. Commonly, business logic is either placed in the controller or the model and the views are filled with too much logic. The opinion of Rectify is that these places are incorrect and that your models in particular are doing too much.
+
+Rectify's opinion is that controllers should just be concerned with HTTP related things and models should just be concerned with data relationships. The problem then becomes, how and where do you place validations, queries and other business logic?
+
+Using Rectify, Form Objects contain validations and represent the data input of your system. Commands then take a Form Object (as well as other data) and perform a single action which is invoked by a controller. Query objects encapsulate a single database query (and any logic it needs). Presenters contain the presentation logic in a way that is easily testable and keeps your views as clean as possible.
+
+Rectify is designed to be very lightweight and allows you to use some or all of it's components. We also advise to use these components where they make sense not just blindly everywhere. More on that later.
+
+Here's an example controller that shows details about a user and also allows a user to register an account. This creates a user, sends some emails, does some special auditing and integrates with a third party system:
+
+```ruby
+class UserController < ApplicationController
+  include Rectify::ControllerHelpers
+
+  def show
+    present UserDetailsPresenter.new(:user => current_user)
+  end
+
+  def new
+    @form = RegistrationForm.new
+  end
+
+  def create
+    @form = RegistrationForm.from_params(params)
+
+    RegisterAccount.call(@form) do
+      on(:ok)      { redirect_to dashboard_path }
+      on(:invalid) { render :new }
+      on(:already_registered) { redirect_to login_path }
+    end
+  end
+end
+```
+
+The RegistrationForm Form Object encapsulates the relevant data that is required for the action and the RegisterAccount Command encapsulates the business logic of registering a new account. The controller is clean and business logic now has a natural home:
+
+```
+HTTP             => Controller   (redirecting, rendering, etc)
+Data Input       => Form Object  (validation, acceptable input)
+Business Logic   => Command      (logic for a specific use case)
+Data Persistence => Model        (relationships between models)
+Data Access      => Query Object (database queries)
+View Logic       => Presenter    (formatting data)
+```
+
+
 ### Learn OOP design
 
 By learning to design small pieces - objects (in OOP), and put them together, you automatically learn how to make good app architecture in total. It is not a magical library just "suddenly" makes your code better, it is whole set of tiny aspects.  
