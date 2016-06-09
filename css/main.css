@@ -577,3 +577,7 @@ table tr td :last-child {
 .github-buttons {
   padding:12px;
 }
+
+.gitter-chat-embed {
+  z-index: 9999;
+}
