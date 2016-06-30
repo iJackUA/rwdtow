@@ -11,6 +11,11 @@ Real shame starts from the very basic of Web development. We are doing web apps,
 * [What really happens when you navigate to a URL](http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/)
 * [What is HTTP](http://www.jmarshall.com/easy/http/)
 
+If you feel yourself confident in basic Web knowledge and want to dive deeper in all aspects, read [High Performance Browser Networking](https://hpbn.co/) free ebook. 
+
+>This book provides a hands-on overview of what every web developer needs to know about the various types of networks (WiFi, 3G/4G), transport protocols (UDP, TCP, and TLS), application protocols (HTTP/1.1, HTTP/2), and APIs available in the browser (XHR, WebSocket, WebRTC, and more) to deliver the best—fast, reliable, and resilient—user experience.
+
+* [High Performance Browser Networking by Ilya Grigorik](https://hpbn.co/)
 
 ## Linux
 A lot of us come to web dev with Windows desktops. But even if Ruby can be installed on Windows - I recommend to use Linux machine for Ruby development. Real OS setup or a virtual machine.  
