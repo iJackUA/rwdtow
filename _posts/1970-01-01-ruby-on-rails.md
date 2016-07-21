@@ -49,7 +49,7 @@ end
 
 private
 def find_item
-  @iten = Item.find(params[:id])
+  @item = Item.find(params[:id])
 end
 ```
 
