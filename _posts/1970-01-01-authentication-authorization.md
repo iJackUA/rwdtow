@@ -17,7 +17,7 @@ The less hidden pieces of data flow would be in your app - the easier will it be
 * [Tyrant](https://github.com/apotonick/tyrant)
 * [rodauth](http://rodauth.jeremyevans.net)
 
-When usera are identified inside the app, the second requirement is to distinguish their abilities. The firts idea could be to assign a marker for each user like `role = 'admin'` and check this model attr allover the app. But this is not flexible, when your pernission rules will change, it requires to change all checkpoints. Also permission logic could be quite complicated and it should be encapsulated. Good example of simple Authorization logic organization is Pundit.
+When users are identified inside the app, the second requirement is to distinguish their abilities. The first idea could be to assign a marker for each user like `role = 'admin'` and check this model attr all over the app. But this is not flexible and when your permission rules change, it requires to change all checkpoints. Also permission logic could be quite complicated and it should be encapsulated. A good example of simple Authorization logic organization is Pundit.
 
 Unfortunately I do not know good example of [RBAC](https://en.wikipedia.org/wiki/Role-based_access_control) implementation in Ruby. Something very close to it is [piece](https://github.com/ThoughtWorksStudios/piece) gem. When Roles contain sets of Permissions and all of them could be assigned to User dynamically + business rules (rules should be implemented as a code that check some restrictions).
  
