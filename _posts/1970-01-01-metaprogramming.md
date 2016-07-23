@@ -4,19 +4,18 @@ title: Magical world of Metaprogramming
 order: 80
 ---
 
-Metaprogramming is a special feature of some language (Ruby is one of them) to make dynamic code definition in runtime. When code generates code. For example in such away made a lot of Rails magic e.g. `some_route_path` helpers, ActiveRecord `find_by_%attr_name%`. 
+Metaprogramming is a special feature of some language (Ruby is one of them) to make dynamic code definition in runtime. When code generates code. This is responsible for a lot of Rails "magic", for example: `some_route_path` helpers, ActiveRecord `find_by_%attr_name%`. 
 
-From the first look it seems an awesome feature. Until it is misused (unfortunately it is... most of the times).
+At first look it seems like an awesome feature, until it is misused (unfortunately most of the time it is).
 The downsides of metaprogramming are:
 
-* "WTF this method comes from ?" issue
-* hard to locate method source code
-* IDE autocomplete can't locate these methods
+* Difficult to locate method source code.
+* Hidden intention in the codebase.
+* IDEs can't locate these methods for auto-complete.
 
-Let me remake one famous saying: "If you have one problem and think that Metaprogramming could help you. Congratulations! Nw you have two problems".
-Most of the time coding challenges that you are solving with Metaprogramming could be be solved in a straightforward way. And that will result better code quality, separation of concerns and clearness.
+To recreate the famouse saying, "If you have one problem and think that metaprogramming could help you. Congratulations! Nw you have two problems". Many times the coding challenges that you solve with metaprogramming could be be solved in a simpler way that could result better code quality, separation of concerns, and clearness.
 
-Example of unneeded Metaprogramming in [`rest-client`](https://github.com/rest-client/rest-client/blob/master/bin/restclient) gem.
+Example of unnecessary metaprogramming in [`rest-client`](https://github.com/rest-client/rest-client/blob/master/bin/restclient) gem.
 
 ```ruby
 POSSIBLE_VERBS = ['get', 'put', 'post', 'delete']
