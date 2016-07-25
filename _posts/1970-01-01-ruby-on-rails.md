@@ -115,6 +115,12 @@ class Decorator < SimpleDelegator
   end
 end
 
+class Sugar < Decorator
+  def cost
+    super + 0.2
+  end
+end
+
 class Milk < Decorator
   def cost
     super + 0.4
