@@ -1,0 +1,35 @@
+# Dependency Injection and IoC containers
+
+This technique is widely used in many programming languages from Java to PHP and JavaScript. Briefly it allows to remove direct dependencies in you classes from other classes. But to depend on abstraction. Needed implementation instances of required abstraction should be "injected" in initializer as params - that is Inversion of Control (not you class decides what exactly to instantiate, but "someone" outside of it). But as it is very messy to handle all dependencies manually (especially when you have a cascade dependencies). IoC Container is that mysterious "someone" who instantiate all objects in the app. It gets annotations of all required abstractions from target class and finds implementations for them to inject (very often they are specified in IoC config).
+In languages with Interfaces they are treatet as natural abstraction identifier, bur Ruby does not have Interfaces. That's why classes should have some synthetic dependency specification.
+
+Some time ago [DHH wrote a critic about DI usage in Ruby](http://david.heinemeierhansson.com/2012/dependency-injection-is-not-a-virtue.html), but [Piotr Solnica made a reasonable examples](http://solnic.eu/2013/12/17/the-world-needs-another-post-about-dependency-injection-in-ruby.html) of good DI usage in Ruby. Also Sandi Metz in her [POODR book](http://poodr.com) provides a good arguments and examples.
+
+With `dry-container` and `dry-auto_inject` libs DI/IoC in Ruby could looks something like this.
+
+```ruby
+my_container = Dry::Container.new
+
+my_container.register(:data_store, -> { DataStore.new })
+my_container.register(:user_repository, -> { container[:data_store][:users] })
+my_container.register(:persist_user, -> { PersistUser.new })
+
+# set up your auto-injection function
+AutoInject = Dry::AutoInject(my_container)
+
+# then simply include it in your class providing which dependencies should be
+# injected automatically from the configured container
+class PersistUser
+  include AutoInject[:user_repository]
+
+  def call(user)
+    user_repository << user
+  end
+end
+```
+* [David Heinemeier Hansson: Dependency injection is not a virtue](http://david.heinemeierhansson.com/2012/dependency-injection-is-not-a-virtue.html)
+* [Piotr Solnica: The World Needs Another Post About Dependency Injection in Ruby](http://solnic.eu/2013/12/17/the-world-needs-another-post-about-dependency-injection-in-ruby.html)
+* [Martin Fowler: Inversion of Control Containers and the Dependency Injection pattern](http://www.martinfowler.com/articles/injection.html)
+* [dry-container](https://github.com/dry-rb/dry-container)
+* [dry-auto_inject](https://github.com/dry-rb/dry-auto_inject)
+* [Effective Ruby dependency injection at scale](http://icelab.com.au/articles/effective-ruby-dependency-injection-at-scale/)

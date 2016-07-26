@@ -1,0 +1,10 @@
+# Cache
+
+TODO
+
+From filecache, to Memcached, Redis.
+Main rule - cache key computation should not be more complex, than producing cached content by itself.
+
+* [**Redis**](http://redis.io/)
+* [Memcached](https://memcached.org/)
+* [Why Redis beats Memcached for caching](http://www.infoworld.com/article/3063161/application-development/why-redis-beats-memcached-for-caching.html)

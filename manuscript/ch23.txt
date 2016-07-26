@@ -1,0 +1,24 @@
+# Frontend
+
+## HTML / CSS
+Bootstrap
+Foundation
+SemanticUI
+
+## JavaScript
+
+TODO: Whole this section :)
+
+### jQuery
+
+### Debug JavaScript
+
+* [Breakpoints](https://developers.google.com/web/tools/chrome-devtools/debug/breakpoints/?hl=en)
+
+### Server-side rendered JS
+"replaceWith" trick
+
+### Modern JavaScript
+Frameworks, Bower
+Modules and loaders
+Try to keep away from Sprockets

@@ -1,0 +1,14 @@
+# Gems
+
+Before adding any utility gem to the project, try to search for alternatives and be sure you chose a minimal solution, that still has developer support and community is contributing to it. Also useful to browse through curated "awesome" list of packages.
+
+* [The Ruby Toolbox](http://www.ruby-toolbox.com/)
+* [Curated Awesome Ruby List](http://awesome-ruby.com/)
+
+**Be aware! Don't be Gems obsessed!** Most of the times you can write the code on your own, without any Gems. Our own code is much easier to customize, polish and build in your architecture. And it does only what it suppose to do. No ballast.
+
+And even if you use a gem, look inside its code, try to understand what it does and how it is implemented. A lot of gem links provided in this guide to show you the most popular solution (that are not simple most of the times) and examples of simpler, better solutions for the topic issue. Investigating others open source code gives you couple advantages:
+
+* you can learn how to do something from other good coders
+* you don't need a documentation for this gem (if the code is clear), as you can see all the public interface and usage logic
+* or you understand that this Gem is so bad and not optimized, that you definitely need to throw it away and write your own implementation (and you already know at least one way how you should NOT do)

@@ -1,0 +1,5 @@
+# Books
+
+TODO: Add more books
+
+* [Objects on Rails](http://objectsonrails.com/) by Avdi Grimm.
