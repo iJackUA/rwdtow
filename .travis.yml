@@ -7,6 +7,7 @@ script:
  - git config --global push.default simple
  - git clone -b leanpub https://${GH_TOKEN}@github.com/iJackUA/rwdtow.git rwdtow-leanpub --depth=1
  - cd rwdtow-leanpub
+ - ls
  - bundle install
  - ./cli convert
  - git add ./manuscript/*
