@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+ - 2.3.0
+script:
+ - git clone -b leanpub https://github.com/iJackUA/rwdtow.git --depth=1
+ - cd rwdtow
+ - bundle install
+ - ./cli convert
+ - git add ./manuscript/*
+ - git commit -m  "sync $(date)"
+ - git push
+git:
+  depth: 1
+branches:
+  only:
+   - gh-pages
