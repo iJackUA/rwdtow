@@ -6,13 +6,11 @@ script:
  - git config --global user.name "Ievgen Kuzminov"
  - git config --global push.default simple
  - git clone -b leanpub https://${GH_TOKEN}@github.com/iJackUA/rwdtow.git rwdtow-leanpub --depth=1
- - cd rwdtow-leanpub
- - ls
- - bundle install
- - ./cli convert
- - git add ./manuscript/*
- - git commit -m  "#$TRAVIS_BUILD_NUMBER, Sync $(date)"
- - git push
+ - cd rwdtow-leanpub && bundle install
+ - cd rwdtow-leanpub && ./cli convert
+ - cd rwdtow-leanpub && git add ./manuscript/*
+ - cd rwdtow-leanpub && git commit -m  "#$TRAVIS_BUILD_NUMBER, Sync $(date)"
+ - cd rwdtow-leanpub && git push
 git:
   depth: 1
 branches:
