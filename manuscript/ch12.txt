@@ -1,22 +1,14 @@
-# SQL
+# Debug
 
-One of the biggest pluses of Active Record (that provides Rails) is that developer do not need to write raw SQL queries to make basic data manipulation in DB. And like everything in a nature abilities that are not in use are to go away completely. In that way we have a bunch of Rails developers that are scared of anything more complex than `SELECT * FROM users`. That is pretty depressing.
+Many people are creating a lot of apps without using even standard debugging technics. We tend to stay a "puts debuggerers" because it is easy, stable and "for sure". But we loose troubleshooting productivity a lot without a good debugging skills. First step is to discover Pry `binding.pry` and Byebug `byebug` debuggers. They allow you to set a breakpoint, stop app execution there and make a print of current variables stack. But debugging is not limited by it. The next step is learn how to walk step-by-step inside the app. Step into functions etc.
 
-* Learn SQL and particular Databases capabilities!
-* In case you use Rails look into Console and try to understand what SQL is composed as a result of given AR query syntax
-* Don't start from the "simplest" AR code, that makes a lot of unneeded queries, N+1 queries etc. Think about any data query beforehand. Think in SQL!
-* In case you use Rails, use the power of AR query composition, that's fine. You do not need to write raw SQL all the time. But when you need to compose complex query and do not know how to do it with AR - first step do it in SQL, and then gradually transform it into AR notation.
-* Some queries (especially those using special abilities of DB, like `PARTITION BY` etc.) better to leave in raw SQL. Think about other developers who will need to support this code. Some things would be clearer in AR notation, some - in pure SQL. Just consider options.   
+Great results could be achieved while combining both these solutions in [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug). Great PRY capabilities with navigations (step and callstack) from Byebug.
 
-Also consider that different databases are best suitable for different cases. One web appliction can make use of a few database simultaneosly. Thik about data type you want to operate. You can even combine relational DB (PostgreSQL, MySQL) with document oriented DB (MongoDB). For graph like data ("friends of my friends" relations) there is own class of DBses like Neo4J. There are even multyparadigm DB like ArangoDB.
+The best debugging experience could be provided via visual debugger like in IntelliJ RubyMine IDE. It is based on additional Gem and require to tun our app via this Gem launcher. But as a result you an set breakpoints ring in your IDE and walk through you code inside IDE. While seeing all variables stack on each step. Such a high density of visual debug info can dramatically increase productivity and decrease time to track an error.
 
-You should also keep an eye on DB world. It is changing as fast as web languages and frameworks. And it is up to web developer to propose and to use the best data storage accodring to data type and common query patterns.
-
-
-* [Khan Academy. Intro to SQL: Querying and managing data](https://www.khanacademy.org/computing/computer-programming/sql)
-* [PostgreSQL Tutorials](http://www.postgresqltutorial.com/)
-* [PostgreSQL Exercises](https://www.pgexercises.com/)
-* [PostgreSQL](http://www.postgresql.org/)
-* [MongoDB](https://www.mongodb.org/)
-* [Neo4J](http://neo4j.com/)
-* [ArangoDB](https://www.arangodb.com/)
+* [Tenderlovemaking: I am a `puts` debuggerer](http://tenderlovemaking.com/2016/02/05/i-am-a-puts-debuggerer.html)
+* [Debugging Rails Appliction](http://guides.rubyonrails.org/debugging_rails_applications.html)
+* [Byebug](https://github.com/deivid-rodriguez/byebug)
+* [Pry](https://github.com/pry/pry)
+* [Ruby default debugger](http://ruby-doc.org/stdlib-2.3.0/libdoc/debug/rdoc/DEBUGGER__.html)
+* [IntelliJ RubyMine Visual Debugger](https://www.jetbrains.com/help/ruby/2016.1/debugging.html)
