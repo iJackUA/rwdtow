@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+ - 2.3.0
+script:
+ - ./cli convert
+ - git add ./manuscript/*
+ - git commit -m  "sync $(date)"
+ - git push
+git:
+  depth: 1
+branches:
+  only:
+  - gh-pages
