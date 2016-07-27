@@ -2,8 +2,11 @@ language: ruby
 rvm:
  - 2.3.0
 script:
- - git clone -b leanpub https://github.com/iJackUA/rwdtow.git --depth=1
- - cd rwdtow
+ - git config --global user.email "kyzminov@gmail.com"
+ - git config --global user.name "Ievgen Kuzminov"
+ - git config --global push.default simple
+ - git clone -b leanpub git@github.com:iJackUA/rwdtow.git rwdtow-leanpub --depth=1
+ - cd rwdtow-leanpub
  - bundle install
  - ./cli convert
  - git add ./manuscript/*
