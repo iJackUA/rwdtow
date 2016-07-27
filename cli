@@ -67,7 +67,7 @@ class MyCLI < Thor
   end
 
   def compose_content(content, metadata)
-    stripped_content = content.gsub(/\A[-]{3}.*[-]{3}/m, '').strip
+    stripped_content = content.gsub(/\A[-]{3}.*[-]{3}\n/m, '').strip
     "# #{metadata['title']}\n\n#{stripped_content}"
   end
 
