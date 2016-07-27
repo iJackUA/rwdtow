@@ -1,6 +1,7 @@
 # Follow great Ruby developers
 
-|
+| Person | Why? | Blog | Twitter | GitHub |
+| --- | --- | --- | --- | --- |
 | **Aaron Patterson** | active Ruby ecosystem contributor, great blogger | [tenderlovemaking.com](http://tenderlovemaking.com/) | [@tenderlove](https://twitter.com/tenderlove) | [@tenderlove](https://github.com/tenderlove) |
 | **Luca Guidi** | author of Hanami.rb framework | [lucaguidi.com](https://lucaguidi.com/) | [@jodosha](https://twitter.com/jodosha) | [@jodosha](https://github.com/jodosha) |
 | **Nick Sutterer** | author of Trailblazer | [nicksda.apotomo.de](http://nicksda.apotomo.de/) |[@apotonick](https://twitter.com/apotonick) | [@apotonick](https://github.com/apotonick) |
