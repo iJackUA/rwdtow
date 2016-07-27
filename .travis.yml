@@ -10,4 +10,4 @@ git:
   depth: 1
 branches:
   only:
-  - gh-pages
+   - gh-pages
