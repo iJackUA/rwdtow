@@ -3,7 +3,7 @@
 > Most Rails developers do not write object-oriented Ruby code. They write MVC-oriented Ruby code by putting models and controllers in the expected locations. Most will add utility modules with class-methods in lib/, but that’s it. It takes 2-3 years before developers realize: “Rails is just Ruby. I can create simple objects and compose them in ways that Rails does not explicitly endorse!”
 [&copy; Mike Perham](https://www.mikeperham.com/2012/05/05/five-common-rails-mistakes/)
 
-RoR is a good starting point for a young web developer. But the main task is not to stop our education on it. Learn to separate what is pure Ruby and what is Rails. Correctly recognize architectural and design issues that comes to your app. And that most of these issues are because of Rails oversimplified approaches misuse.
+RoR is a good starting point for a young web developer. But the main task is not to stop our education on it. Learn to separate what is pure Ruby and what is Rails. Correctly recognize architectural and design issues that come to your app. And that most of these issues are because of Rails oversimplified approaches misuse.
 
 TODO: Add more points to be aware of in Rails
 
@@ -17,11 +17,11 @@ Rails comes with the following ways to alter config according to environment
 * or you can replace config files on deploy
 
 Often all these ways are mixed without any separation and consideration.
-Mostly all these ways could be replaces by `ENV` vars to change value of primitive configs and env initializers to make bigger structural changes in init flow.
+Mostly all these ways could be replaced by `ENV` vars to change the value of primitive configs and env initializers to make bigger structural changes in initialization flow.
 
 ## You don't need an ActiveRecord for every kind of Model
 
-What Rails teachs you the first is to model data by AR classes. And that works great while you are "on the Rails Way". But unfortunately that also teaches to think that Model structure is unbreakable from persistence layer (literally from DB table structure).
+What Rails teaches you the first is to model data by AR classes. And that works great while you are "on the Rails Way". But unfortunately, that also teaches to think that Model structure is unbreakable from persistence layer (literally from DB table structure).
 
 That causes issues:
 
@@ -29,12 +29,12 @@ That causes issues:
 * tendency to structure data in a way as it easier to map into relational DB, rather than how it is clearer according to Business Logic
 * putting anything that is not AR class to `lib` folder
 
-You need to understand that even PORO could be a Model while it encapsulate Data and Actions on some entity. And it is not a must for Model to have `find` and `save` actions (it is merely Active Record pattern, recognize it!). You can (and ideally should) separate Model as data container and some other classes to handle persistency. And it does not matter do we get/save it into DB or get/send it via REST API. 
+The "Polichinelo's secret": even PORO could be a Model while it encapsulates Data and Actions on some entity. And it is not a must for Model to have `find` and `save` actions (it is merely Active Record pattern, recognize it!). You can (and ideally should) separate Model as the data container and some other classes to handle persistence. And it does not matter do we get/save it into DB or get/send it via REST API. 
 
 
 ## Before filter/action
 
-The main purpose of `before_action` hook is to authorize action call. Literally decide allow this user to run the action or not. But often we can find "pre-population" code like this:
+The main purpose of `before_action` hook is to authorize action call. Literally, decide to allow this user to run the action or not. But often we can find "pre-population" code like this:
 
 ```ruby
 before_filter :find_item, only: [:update, :show, :edit]
@@ -49,8 +49,8 @@ def find_item
 end
 ```
 
-1st - there is no difference between before_filter and before_action it is aliases, and `before_filter` is deprecated in Rails 5.0.
-2nd - do you think it is DRY? No. It is just misleading code, when you forget what `@variables` are available in what actions/views.
+1st - there is no difference between before_filter and before_action they are aliases, and `before_filter` is deprecated in Rails 5.0.
+2nd - do you think it is DRY? No. It is just misleading code when you forget what `@variables` are available in what actions/views.
 Be explicit in such cases:
 
 ```ruby
@@ -88,7 +88,7 @@ But unfortunately helpers became overcomplicated very fast with
 * being included into controllers (because you also want to do some semi-domain logic in controller)
 * a lot of HTML concatenation
 
-I consider global view helpers almost as an antipattern, that leads to a code mess. The solution is to apply Decorator pattern approach. With view helpers encapsulated in specialized Decorator classes and helpers that generates a lot of HTML use partials with ERB instead of HTML strings concatenation.
+I consider global view helpers almost as an antipattern, that leads to a code mess. The solution is to apply Decorator pattern approach. With view helpers encapsulated in specialized Decorator classes and helpers that generate a lot of HTML use partials with ERB instead of HTML strings concatenation.
 
 Decorator could be as simple as that 
 
