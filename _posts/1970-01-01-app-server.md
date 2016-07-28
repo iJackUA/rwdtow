@@ -4,7 +4,7 @@ title: Know your App Server!
 order: 140
 ---
 
-When you do default run of Rails app it starts a WEBrick server. It is enough for the dev env, but in any case not enough for production. As it runs code in single thread and can not provide concurency in requests handling.
+When you do default run of Rails app it starts a WEBrick server. It is enough for the dev env, but in any case not enough for production. As it runs code in a single thread and can not provide concurrency in requests handling.
 
 It is very important to understand different operation models of Threaded and Event-loop based servers to select the most reliable and efficient server for your app.
 
