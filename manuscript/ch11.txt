@@ -1,6 +1,6 @@
 # Document your code
 
-Code documentation is not only writing a human-readable code comments. It it also about creating functions comments in specific format (like RDoc or YARDOC) that is clear to other developers adn could be read and structured by your IDE.
+Code documentation is not only writing human-readable code comments. It it also about creating functions comments in the specific format (like RDoc or YARDOC) that is clear to other developers and could be read and structured by your IDE.
 
 * [Rails API doc Guideline](http://edgeguides.rubyonrails.org/api_documentation_guidelines.html)
 * [RDoc](http://docs.seattlerb.org/rdoc/)
