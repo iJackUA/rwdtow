@@ -12,6 +12,8 @@ Also, consider that different databases are best suitable for different cases. O
 
 You should also keep an eye on DB world. It is changing as fast as web languages and frameworks. And it is up to web developer to propose and to use the best data storage according to data type and common query patterns.
 
+To keep productivity while using specific features of databases, you can use a [Sequel](http://sequel.jeremyevans.net/) lib. It is very similar to ActiveRecord, but not coupled with Rails and has wide plugins and extensions support. 
+
 
 * [Khan Academy. Intro to SQL: Querying and managing data](https://www.khanacademy.org/computing/computer-programming/sql)
 * [PostgreSQL Tutorials](http://www.postgresqltutorial.com/)
@@ -20,3 +22,4 @@ You should also keep an eye on DB world. It is changing as fast as web languages
 * [MongoDB](https://www.mongodb.org/)
 * [Neo4J](http://neo4j.com/)
 * [ArangoDB](https://www.arangodb.com/)
+* [Sequel](http://sequel.jeremyevans.net/)
