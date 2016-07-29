@@ -23,6 +23,7 @@ description: "\'When Rails is not enough!\'. Personal best practices guide by Ie
 
 # List of links in the navigation bar
 navbar-links:
+  LeanPub eBook: "https://leanpub.com/rwdtow"
   About: "about"
   GitHub: "https://github.com/iJackUA/rwdtow"
   Blog: "http://stdout.in"

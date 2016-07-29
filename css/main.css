@@ -594,6 +594,6 @@ a.header-section, a.header-section:hover{
   color: black;
 }
 
-.header-section:hover:after{
+a.header-section:hover:after{
     content: ' §';
 }
