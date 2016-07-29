@@ -11,8 +11,19 @@ Sometimes I will suggest tools or gems (with comparison if possible), but these 
 > This guide is not complete tutorial - clear steps like installing Ruby (via `rbenv` or `rvm`), managing dependencies via Bundler, etc. are not described due to the wide coverage of these aspects in other tutorials. I do not mention it if I do not know any issues regarding a particular aspect, if it works – that's fine.
 
 ## Why not "Ruby On Rails" and not "The Right Way"?
+
 I am glad you are asking! :)  
 It is not a secret that most Ruby web developers are introduced to Ruby via Rails. This is a double-edged sword. It lowers the barrier to entry, but it also narrows the range of knowledge. This guide contains a special Ruby on Rails section to cover Rails-specific things, and hopefully it will encourage you to look outside of Rails and the “Rails Way”. I can't call the way described here as "The Right Way" as it is just another way to look at Ruby web development.
+
+## Damaged ecosystem
+
+The main issue, that forced me to start writing, is unconscious feeling, that something is not perfect with the Rails Way. Attempts to change the behavior or add more structure had no luck. When you introduce a new part into your Rails app - it results in a tension and even active resistance (of the codebase and teammates).
+
+The whole eco-system is deeply damaged by Rails in terms of code and mindset of developers. And yes there are no real competitors, only because of Rails is so huge in the room of Ruby, that it requires enormous  forces to rise a competitor.
+
+It results in no pluralism of ideas, no real code reusability, as most gems are made solely for Rails (and it is the real pain to customize them). Exactly because of this "it is so hard to write Ruby web app without Rails".
+
+This guide is an attempt to describe the way to build the web app with a real understanding of each component, with knowledge that is relevant in any web language and framework. To become a better web developer and demand for a better ecosystem!
 
 ## Manifesto
 
