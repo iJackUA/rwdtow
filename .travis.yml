@@ -9,7 +9,7 @@ script:
  - (cd rwdtow-leanpub; bundle install --gemfile=./Gemfile)
  - (cd rwdtow-leanpub; ./cli convert)
  - (cd rwdtow-leanpub; git add ./manuscript/*)
- - (cd rwdtow-leanpub; git commit -m  "#$TRAVIS_BUILD_NUMBER, Sync $(date)")
+ - (cd rwdtow-leanpub; git commit -m  "Travis build №$TRAVIS_BUILD_NUMBER, Sync $(date)")
  - (cd rwdtow-leanpub; git push)
 git:
   depth: 1
