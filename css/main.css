@@ -589,3 +589,11 @@ table tr td :last-child {
 .gitter-chat-embed {
   z-index: 9999;
 }
+
+a.header-section, a.header-section:hover{
+  color: black;
+}
+
+.header-section:hover:after{
+    content: ' §';
+}

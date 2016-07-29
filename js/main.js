@@ -38,8 +38,15 @@ var main = {
     // show the big header image	
     main.initImgs();
     main.initToc();
+    main.initSections();
   },
   
+  initSections: function() {
+    $('h1,h2,h3,h4,h5,h6').filter('[id]').each(function () {
+      $(this).html('<a class="header-section" href="#'+$(this).attr('id')+'">' + $(this).text() + '</a>');
+    });
+  },
+
   initImgs : function() {
     // If the page was large images to randomly select from, choose an image
     if ($("#header-big-imgs").length > 0) {
