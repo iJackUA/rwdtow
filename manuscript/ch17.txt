@@ -1,10 +1,10 @@
 # Know your CLI!
 
-Everybody knows that you should use Rake task to run some code in CLI. But we also need to understand that Rake is not something that comes by default from "Rails". It is an external tool and ideally it also should be a matter of consideration to use it or not. The main downside of Rake task is that is hard to test (due to DSL nature it requires some special initialization). You should be very careful while putting some business logic in Rake tasks. It is considered is harmful, as putting logic inside web frameworks Controller.
+Everybody knows that you should use Rake tasks to run code from the CLI. But we also need to understand that Rake is more than just a part of Rails. It is an independent tool, and deserves consideration about whether it should be used or not. The main downside of Rake tasks is that they are hard to test – due to their DSL nature, they require special initialization. You should be very careful when putting business logic into Rake tasks. It is just as harmful as putting business logic into controllers in a web framework.
 
-As with any other tool Rake is not limited to `namespace`, `task` and `desk` - you should learn how to use all benefits and functionality hidden inside. Try to look into advanced Rake docs. 
+As with any tool, Rake is not limited to `namespace`, `task` and `desc`. You should learn how to use all of the benefits and functionality hidden inside. Try to look into the advanced Rake docs.
 
-Also, we need to understand that there are much cleaner alternatives like Thor. That provides the same functionality to simplify writing own CLI tools, but do it in much cleaner OOP way.
+Also, we need to understand that there are much cleaner alternatives, like Thor. Thor provides the same simple functionality for writing your own CLI tools, but does so in a much cleaner, OOP way.
 
 * [Rake](http://docs.seattlerb.org/rake/)
 * [Thor](https://github.com/erikhuda/thor)

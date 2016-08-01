@@ -1,10 +1,10 @@
 # Know your App Server!
 
-When you do default run of Rails app it starts a WEBrick server. It is enough for the dev env, but in any case not enough for production. As it runs code in a single thread and can not provide concurrency in requests handling.
+Running a Rails app starts a WEBrick server by default. This is good enough for the development environment, but not for production. WEBrick runs code in a single thread, and can not handle requests concurrently.
 
-It is very important to understand different operation models of Threaded and Event-loop based servers to select the most reliable and efficient server for your app.
+It is very important to understand the different operating models of threaded and event-loop based servers, to select the most reliable and efficient server for your app.
 
-Another aspect is handling static files. Do not give this task to Ruby server, do not waste CPU time. Give this work to reverse proxy servers like Nginx. It will also handle a lot more tings like proxying (e.g. 3000 port to 80 port), multi-domain setup, request per second limit to prevent DDoS, "slow client" attack etc.   
+Another aspect is how static files are handled. Do not waste CPU time by giving this task to a Ruby app. Give this work to reverse proxy servers like Nginx. They can also handle other things, like proxying (e.g. 3000 port to 80 port), multi-domain setup, limiting requests per second to prevent DDoS, "slow client" attack, etc.
 
 TODO: Make a brief description of different models  
 

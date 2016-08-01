@@ -1,6 +1,6 @@
 # Admin
 
-Prefer solutions that will quiclky generate Admin area instead fo ActiveAdmin-like DSL that makes admin are quickly, but barely customizable
+Prefer solutions that will quickly generate an admin area, instead of an ActiveAdmin-like DSL that is quick to set up, but barely customizable.
 
 * [**Administrate**](https://github.com/thoughtbot/administrate)
 * [Active Admin](http://activeadmin.info/)

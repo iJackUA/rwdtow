@@ -1,21 +1,21 @@
 # Tests
 
-Ruby community is well known by its good testing adoption. For example PHP community is yet not even close the level of understanding how important tests on any stage of app development. And moreover not close to actually writing tests as much as Ruby devs do. One of the secrets of such a success is great testing tools, that provide powerful syntax and capabilities mostly due to metaprogramming capabilities and DSL of Ruby.
+The Ruby community is well known for its adoption of good testing practices. For example, the PHP community is not even close the same level of understanding of the importance of testing in every stage of app development. Moreover, the average PHP developer does not write nearly as many tests as the average Ruby developer does. One of the secrets of Ruby's testing success is its great tools. Ruby testing tools provide powerful syntax and features, made possible by metaprogramming and DSLs.
 
-Don't be so happy too early. As always great power comes with great responsibility. It is a double-edged sword and you need to recognize good and "not so good" approaches - not to hurt you.
+Let's not pat ourselves on the back too quickly, though. As always, great power comes with great responsibility. These tools are a double-edged sword. You need to recognize the good parts and the not-so-good parts, so as not to hurt yourself.
 
 Testing rules:
 
-* Test should be simple and obvious. It should not require writing a test for a test.
-* Test only one thing.
-* It should do clear assertions.
-* It should be predictable and repeatable (produce the same result on each run). 
+* Tests should be simple and obvious. They should not require testing, themselves.
+* Each test should do only one thing.
+* Tests should have clear assertions.
+* Tests should be predictable and repeatable, producing the same result on each run.
 
 ## Unit tests
 
-Unit tests cover code level logic. It makes some object initialization and makes assertions on the result of method or function call. There are two most popular solutions in Ruby: Minitest and RSpec.
+Unit tests cover code-level logic. It instantiates an object, and makes assertions on the result of a method or function call. There are two popular unit testing solutions in Ruby: Minitest and RSpec.
 
-**RSpec** is very popular Gem that provides excessive DSL for all testing aspects. It allows writing test in BDD "expects" style. It's assertions are tend to be human readable. There are a lot of special extensions for RSpec. But the main advantage became the main drawback - you need to learn a lot of DSL and asserts for different cases. Any extensions of RSpec flow that you want to implement requires quite a big efforts and learning from you.
+**RSpec** is a very popular gem that provides an expressive DSL for all aspects of testing. It allows writing test in a BDD "expects" style. Its assertions tend to be human-readable, and it has lots of special extensions. However, its main advantage is also its main drawback – you need to learn a large DSL and assertion syntax. RSpec extensions make this worse, requiring you to put in quite a lot of effort to learn everything.
 
 ```ruby
 RSpec.describe "Using an array as a stack" do
@@ -43,8 +43,8 @@ RSpec.describe "Using an array as a stack" do
 end
 ```
 
-**Minitest** became a part of Ruby standard library and that's why is a preferable testing way for Gems and libs (as it does not require additional dependencies). Also, it provides very small assertions interface, that is easy to learn and adopt. The main advantage of test written with Minitest - it is PORO. That's why you don't need to learn anything new to provide your new assertions or flow - it is just pure Ruby, use the same technics as in your code. Code initialization and calls are almost identical to real usage.
-IMHO Minitest is a better choice to write simple, clear and predictable tests. 
+**Minitest** became a part of the Ruby standard library, and that is why it is preferable for testing gems and libs, as it does not require additional dependencies. It provides a very small assertions interface, that is easy to learn and adopt. The main advantage of Minitest is that tests are just POROs. That is why you do not need to learn anything new to structure your tests – it is just pure Ruby. Use the same techniques as in your other code. Code initialization and calls are almost identical to real usage.
+IMHO Minitest is the better choice for writing simple, clear and predictable tests.
 
 ```ruby
 class TestMeme < Minitest::Test
@@ -66,7 +66,7 @@ class TestMeme < Minitest::Test
 end
 ```
 
-Minitest also provides a Spec style.
+Minitest also provides a Spec style, which has a lot of RSpec syntactic sugar, but still has a dramatically simpler code base (when you look inside Minitest gem code).
 
 ```ruby
 describe Meme do
@@ -88,16 +88,14 @@ describe Meme do
 end
 ```
 
-It has a lot of Rspec syntactic sugar but still has dramatically simpler code base (when you look inside Minitest gem code).
-
-Stay consistent, don't write test in different styles with Minitest. Choose the one you like the most and write all tests in it. But remember that using Spec style with Minitest reduces most advantages like clear Ruby and known OOP techniques. 
+Stay consistent, don't write tests in different styles with Minitest. Choose the one you like the most, and write all tests in it. But remember that using Spec style with Minitest reduces its advantages, like normal Ruby syntax and usage of normal OOP techniques.
 
 * [**Minitest**](http://docs.seattlerb.org/minitest/)
-* [RSpec](http://rspec.info/) 
+* [RSpec](http://rspec.info/)
 
 ## Test Behavior, not Configuration
 
-There is a very popular [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) gem, to test a lot of ActiveRecord Model aspects like `has_one`.
+The [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) gem is very popular for testing aspects of ActiveRecord model configuration, like `has_one`.
 
 ```ruby
 class Person < ActiveRecord::Base
@@ -111,11 +109,11 @@ end
 
 But why do we need to test indirect signs of expected behavior instead of testing the behavior directly?
 
-We could better write behavior test like this
+We could better write behavior tests like this:
 
 ```ruby
 class PersonTest < Minitest::Test
-  def test_has_parter 
+  def test_has_parter
     person = Person.new
     partner = Partner.new
     assert_equal partner, person.partner
@@ -123,18 +121,19 @@ class PersonTest < Minitest::Test
 end
 ```
 
-And it stays positive disregard any implementation of the `person.partner` the method you would do. This is exactly how your app expects `Person` class to behave. So why your tests should be different and expect something from class while relying on its internal implementation?
+The test above will continue passing, regardless of any changes to the implementation of `person.partner`. This is exactly how your app expects the `Person` class to behave, so why should your tests be different, and rely upon the internal implementation?
 
 * [Test Behavior, not Configuration](http://naildrivin5.com/blog/2016/05/23/test-behavior-not-configuration.html)
 
 ## Integration tests
 
-Ruby allows you to write Integration tests. Literally, it is very close to real testing of the web app in Browser. A set of commands to click on links, visiting the page, fill in test into inputs and a validating result of these actions.
-It is made by Capybara framework. Basically, it uses Rack "fake browser" it makes requests and parse the response, but is not capable of running JavaScript. To make full end user browser emulation you need to use Poltergeist or Capybara Webkit add-ons. They run the same commands inside headless Webkit browser. Of course, it adds time penalty, tests with JS run slower than without JS. You need to understand that and activate JS per test only in the test that requires it.
+Ruby allows you to write integration tests. These emulate the real interaction between the web app and the browser. They usually contain a set of commands to click on links, visit certain pages, fill in form fields, and validate the results of these actions.
 
-One thing to understand - Integration test should not expect to make some assertions on the internal state of the web app. It should not make assertions on code variables etc. It should assert only on external output body and HTTP response codes.
+Integration tests can be written using the Capybara framework. Basically, it acts as a "fake browser," making requests to your Rack app and parsing the responses, but is not capable of running JavaScript. To fully emulate an end-user browser, you need to use the Poltergeist or Capybara Webkit add-ons. They run the same commands inside a headless Webkit browser. Of course, this incurs a speed penalty. Tests with JS run slower than tests without JS. You need to be aware of that, and activate JS per test, only in the tests that require it.
 
-Also, do not overuse Integration test. Keep in mind that in any (ANY!) case Integration test is of magnitude slower than Unit tests. When you write code of bad quality, e.g. put a lot of logic into Controllers - the only way to test it is to `visit` the page with this Controller. You will need to execute the whole app request cycle to test only tiny things. That should encourage you to separate Logic from the Controller, put it into separate Classes and just combine calls to them into Controller. In such case, you can test 90% of the Logic via Unit tests (that are fast) and make only a few "smoke tests" on the action in Controller (to test success call and correct invalid call response, but not all way of calling that part of Logic). 
+Understand that integration tests should not make assertions against the internal state of the web app. They should not make assertions on code variables, etc. They should only assert external output, like the response body and HTTP status codes.
+
+Also, do not overuse integration tests. Keep in mind that in any (ANY!) case, integration tests are an order of magnitude slower than unit tests. When you write bad quality code – e.g. putting a lot of logic into Controllers – the only way to test it is to `visit` the corresponding page. You will need to execute the whole app request cycle to test only tiny things. That should encourage you to remove logic from the controller, put it into separate classes, and just call the new classes from the controller. That way, you can test 90% of the logic via unit tests (which are fast) and make only a few "smoke tests" on the controller action (to test success/failure scenarios, but not every part of the business logic).
 
 
 * [Capybara](http://jnicklas.github.io/capybara/)
@@ -149,10 +148,10 @@ Also, do not overuse Integration test. Keep in mind that in any (ANY!) case Inte
 
 ## Stub external services call
 
-Your test should not depend on the availability of external services on each run. Ideally, you should be able to run all tests without the Internet access. But that doesn't mean that external integrations should not be tested.
-If your app makes a request to external service - this request should be Stubbed. Instead of making a real call it should "pretend" and return ready made response (there could be couple tests for success and failure response). In Ruby Gems like Webmock and VCR can help you to catch real response for the first time and then to reuse it. Or to compose own response contents.
+Your tests should not depend on the availability of external services. Ideally, you should be able to run all tests without Internet access, but that doesn't mean that external integrations should not be tested.
+If your app makes a request to an external service, this request should be stubbed. Instead of making a real call, it should "pretend" and return a ready-made response (there could be a couple of different responses, to test success/failure). Gems like Webmock and VCR can help you to catch real responses and then reuse them for subsequent test runs, or to write your own response content.
 
-Stub request with Webmock
+Stub request with Webmock:
 
 ```ruby
 stub_request(:post, "www.example.com")
@@ -160,7 +159,7 @@ stub_request(:post, "www.example.com")
     .to_return(:body => "Nice work!")
 ```
 
-Catch requests and return a "fake" response with VCR
+Catch requests and return a "fake" response with VCR:
 
 ```ruby
   VCR.use_cassette("synopsis") do
@@ -174,19 +173,20 @@ Catch requests and return a "fake" response with VCR
 * [VCR](https://github.com/vcr/vcr)
 
 ## Speed-up test
-Write effective tests, mock dependencies, stub behavior, heavy computations and external web calls.
-Also, you can run tests in parallel, another point to keep them completely independent one from another.
+To achieve fast tests, stub behavior, heavy computations, and external web calls, in addition to mocking dependencies.
+You can also run tests in parallel – another reason to keep them completely independent from one another.
 
 * [Gem: parallel_tests](https://github.com/grosser/parallel_tests)
 
 ## Learn Tests Design
 
-To write cost and efforts effective tests (tests that should not be rewritten from scratch after any small refactoring) you should Design your Tests almost as good as you must Design your Code. 
+To write cost-efficient and effort-efficient tests – tests that should not be rewritten from scratch after any small refactoring – you should design your tests almost as well as you design your other code.
 
-* Cover with tests only public interface of classes
+* Only test public interface of classes
 * Don't test tiny sensitive private methods (they are very likely to change often)
-* Reuse repetitive test via mixins 
-* Avoid hidden testing of the same functionality multiple times (our code should be organized in layers that are testable separately from each other) 
+* Reuse repetitive test via mixins
+* Avoid redundantly testing the same functionality multiple times. Code should be organized in layers that are testable separately from each other.
+^
 
 * [Video: The Magic Tricks of Testing by Sandi Metz](https://www.youtube.com/watch?v=URSWYvyc42M)
 * [Book: Practical Object-Oriented Design in Ruby (POODR) by Sandi Metz](http://www.poodr.com/)

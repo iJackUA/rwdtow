@@ -1,40 +1,40 @@
 # Ruby on Rails
 
 > Most Rails developers do not write object-oriented Ruby code. They write MVC-oriented Ruby code by putting models and controllers in the expected locations. Most will add utility modules with class-methods in lib/, but that’s it. It takes 2-3 years before developers realize: “Rails is just Ruby. I can create simple objects and compose them in ways that Rails does not explicitly endorse!”
-[&copy; Mike Perham](https://www.mikeperham.com/2012/05/05/five-common-rails-mistakes/)
+– [Mike Perham](https://www.mikeperham.com/2012/05/05/five-common-rails-mistakes/)
 
-RoR is a good starting point for a young web developer. But the main task is not to stop our education on it. Learn to separate what is pure Ruby and what is Rails. Correctly recognize architectural and design issues that come to your app. And that most of these issues are because of Rails oversimplified approaches misuse.
+RoR is a good starting point for a young web developer, but it is important that our education does not end there. Learn to separate what is pure Ruby and what is Rails. Correctly recognize architectural and design issues that appear in your app, and that most of these issues are caused by misusing oversimplified approaches from Rails.
 
 TODO: Add more points to be aware of in Rails
 
 ## Confusing environments
 
-Rails comes with the following ways to alter config according to environment
+Rails comes with the following ways to alter config according to the environment:
 
-* environment initializers (in `config/environments` folder) 
+* Environment initializers (in the `config/environments` folder)
 * YAML inheritance
 * `ENV` variables
-* or you can replace config files on deploy
+* Or you can replace config files on deploy
 
-Often all these ways are mixed without any separation and consideration.
-Mostly all these ways could be replaced by `ENV` vars to change the value of primitive configs and env initializers to make bigger structural changes in initialization flow.
+Often, all of these approaches are mixed without any separation or consideration.
+They can usually all be replaced by `ENV` vars that change the value of primitive configs and env initializers, to make bigger structural changes in initialization flow.
 
-## You don't need an ActiveRecord for every kind of Model
+## You don't need ActiveRecord for every kind of model
 
-What Rails teaches you the first is to model data by AR classes. And that works great while you are "on the Rails Way". But unfortunately, that also teaches to think that Model structure is unbreakable from persistence layer (literally from DB table structure).
+What Rails teaches you first is to model data with AR classes, and that works great while you are following "The Rails Way." Unfortunately, that teaches us to think that model structure is inseparable from the persistence layer (literally from the DB table structure).
 
 That causes issues:
 
-* all data that is not saved into DB directly flows in app as a primitive data (e.g. Array of Hashes)
-* tendency to structure data in a way as it easier to map into relational DB, rather than how it is clearer according to Business Logic
-* putting anything that is not AR class to `lib` folder
+* All data that is not saved to the DB flows into the app as primitive data structures (e.g. Array of Hashes).
+* There is a tendency to structure data in a way that is easy to map into a relational DB, rather than a way that clearly reflects the business logic.
+* Anything that is not an AR class is put into the `lib` folder.
 
-The "Polichinelo's secret": even PORO could be a Model while it encapsulates Data and Actions on some entity. And it is not a must for Model to have `find` and `save` actions (it is merely Active Record pattern, recognize it!). You can (and ideally should) separate Model as the data container and some other classes to handle persistence. And it does not matter do we get/save it into DB or get/send it via REST API. 
+It is an open secret: even a PORO can be a model, if it encapsulates the data and actions of an entity. Models are not required to have `find` and `save` actions (those are merely the Active Record pattern. Recognize it!). You can, and ideally should, separate models as data containers from other classes that handle persistence. It does not matter whether we get/save it via a DB, or get/send it via a REST API.
 
 
 ## Before filter/action
 
-The main purpose of `before_action` hook is to authorize action call. Literally, decide to allow this user to run the action or not. But often we can find "pre-population" code like this:
+The main purpose of the `before_action` hook is to authorize the call to the action – literally, to decide to allow this user to run the action or not. But often we can find "pre-population" code like this:
 
 ```ruby
 before_filter :find_item, only: [:update, :show, :edit]
@@ -49,8 +49,9 @@ def find_item
 end
 ```
 
-1st - there is no difference between before_filter and before_action they are aliases, and `before_filter` is deprecated in Rails 5.0.
-2nd - do you think it is DRY? No. It is just misleading code when you forget what `@variables` are available in what actions/views.
+Firstly, there is no difference between `before_filter` and `before_action`. They are aliases, and `before_filter` is deprecated in Rails 5.0.
+
+Secondly, do you think this is DRY? No. It is misleading when you forget what `@variables` are available in what actions/views.
 Be explicit in such cases:
 
 ```ruby
@@ -66,11 +67,11 @@ Be explicit in such cases:
   end
 ```
 
-That does not break DRY principle even if you repeat `find_item` call 10 times in different actions.
+This does not violate the DRY principle, even if you repeat the `find_item` call 10 times in different actions.
 
 ## HTML helpers. Decorators.
 
-This is the first place where young RoR developer puts his view helper code. It is fine for the very beginning to do things like this.
+This is the first place where young RoR developers put their view helper code. It is fine to do things like this, in the very beginning.
 
 ```ruby
 module ApplicationHelper
@@ -81,16 +82,16 @@ module ApplicationHelper
 end
 ```
 
-But unfortunately helpers became overcomplicated very fast with
+Unfortunately, helpers become overcomplicated very quickly with:
 
 * a lot of semi-domain logic
-* mixed responsibility
+* mixed responsibilities
 * being included into controllers (because you also want to do some semi-domain logic in controller)
 * a lot of HTML concatenation
 
-I consider global view helpers almost as an antipattern, that leads to a code mess. The solution is to apply Decorator pattern approach. With view helpers encapsulated in specialized Decorator classes and helpers that generate a lot of HTML use partials with ERB instead of HTML strings concatenation.
+I almost consider global view helpers as an antipattern which leads to messy code. The solution is to apply the Decorator pattern approach, with view helpers encapsulated in specialized Decorator classes, and helpers that generate a lot of HTML using partials with ERB instead of HTML string concatenation.
 
-Decorator could be as simple as that 
+A Decorator could be as simple as this:
 
 ```ruby
 class Coffee
@@ -130,7 +131,7 @@ Milk.new(coffee).origin            # Colombia
 Sugar.new(Milk.new(coffee)).class  # Coffee
 ```
 
-or it could be something more sophisticated like provided via gems Drapper or Disposable::Twin
+Or it could be something more sophisticated, like the functionality provided in the Drapper or Disposable::Twin gems.
 
 * [Evaluating Alternative Decorator Implementations In Ruby](https://robots.thoughtbot.com/evaluating-alternative-decorator-implementations-in)
 * [Gem: Draper](https://github.com/drapergem/draper)
