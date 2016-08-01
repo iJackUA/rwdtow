@@ -50,9 +50,9 @@ TODO
 
 ### Protect non-production servers with HTTP Auth
 
-Basic Auth could be used as the main auth way for very simple apps or admin backend. But often it is used to prevent access to stagin servers for strangers and search engines (to prevent indexing of non production serves).
+Basic Auth could be used as the main form of authentication for very simple apps, or admin backends. It is often used to prevent access to staging servers by strangers and search engines (to prevent indexing of non-production pages).
 
-In Rails the simplest basic auth could be added like this 
+In Rails, the simplest basic auth could be added like this:
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -60,9 +60,9 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-More advanced ways could be found in [Rails docs](http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html).
+More advanced ways can be found in the [Rails docs](http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html).
 
-In any other Rack based server you can use `Rack::Auth::Basic` middleware
+In any other Rack based server, you can use the `Rack::Auth::Basic` middleware:
 
 ```ruby
 use Rack::Auth::Basic, "Restricted Area" do |username, password|
