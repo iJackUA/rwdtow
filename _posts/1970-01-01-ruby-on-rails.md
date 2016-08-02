@@ -140,3 +140,32 @@ Or it could be something more sophisticated, like the functionality provided in 
 * [Evaluating Alternative Decorator Implementations In Ruby](https://robots.thoughtbot.com/evaluating-alternative-decorator-implementations-in)
 * [Gem: Draper](https://github.com/drapergem/draper)
 * [Gem: Disposable](https://github.com/apotonick/disposable)
+
+## ActiveJob and business logic
+
+ActiveJob is a very convenient tool, but it is very easy to write unmaintenable code with it. When you put your actual Job logic inside `process` method it is very hard to test this logic and impossible to reuse without the ActiveJob context.
+
+The main idea that is hidden behind ActiveJob - it is an application-framework boundary, where the framewrok got data from to "external world" and transfer these data to you application code. It should follow the same rules as controller does. If you follow the idea of "skinny controller", you should also apply the "skinny job" principle. It should not contain SQL queries or business logic manipulations inside, but just call to model or operation object.
+
+Look at the following similiarities of `ActiveJob::process` and `Controller::[action_name]` classes:
+
+* it is the first entry point where your code naturally "gets the wheel" and where you can do all the manipulations
+* this method receives parameters from the "outside worlds"
+* Browser and Job queue - are representatives of the "outside world"
+* controller and job classes do parsing and unification of params for your code
+
+Your job should like as simple as that
+
+```ruby
+class BigComplexJob < ApplicationJob
+  queue_as :default
+ 
+  def perform(*params)
+    MyComplexLogicClass.do_a_lot_of_work(params)
+  end
+end
+```
+
+And you cover `MyComplexLogicClass` with simple Unit tests with the whole set of `params` conditions.
+
+Another aspect is a job queue backend. Delayed Job seems to be a good strating point as it does not require additional infrastructure, just a database. But it quickly became a bottlneck if you have a lot of quick jobs. Redis (im-memory storage) based solutions should be used as more reliable and performant alternatives: [Resque](https://github.com/resque/resque) or [Sidekiq](http://sidekiq.org/).
