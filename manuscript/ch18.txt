@@ -1,6 +1,8 @@
 # Admin
 
-Prefer solutions that will quickly generate an admin area, instead of an ActiveAdmin-like DSL that is quick to set up, but barely customizable.
+ActiveAdmin is a very popular solution. It provides handy DSL to display CRUD interface for ActiveRecord Models. From the very beginning it helps to spare time, but the at later development stages it will  require much more time to make even minor customization.
+
+For projects, where you can't change requirements in favor of the "tool capability", prefer solutions that help to scaffold (generate) admin section files. It could look like a lot of repetitive boilerplate code, but in future, it allows customize each screen separately without a headache.
 
 * [**Administrate**](https://github.com/thoughtbot/administrate)
 * [Active Admin](http://activeadmin.info/)
