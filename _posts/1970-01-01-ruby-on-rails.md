@@ -141,17 +141,17 @@ Or it could be something more sophisticated, like the functionality provided in 
 * [Gem: Draper](https://github.com/drapergem/draper)
 * [Gem: Disposable](https://github.com/apotonick/disposable)
 
-## ActiveJob and business logic
+## Active Job and business logic
 
-ActiveJob is a very convenient tool, but it is very easy to write unmaintainable code with it. When you put your actual Job logic inside `process` method it is very hard to test this logic and impossible to reuse without the ActiveJob context.
+Active Job is a very convenient tool, but it is very easy to write unmaintainable code with it. When you put your actual job logic inside `process` method it is very hard to test this logic and impossible to reuse without the Active Job context.
 
-The main idea that is hidden behind ActiveJob - it is an application-framework boundary, where the framework got data from to "external world" and transfer these data to you application code. It should follow the same rules as the controller does. If you follow the idea of "skinny controller", you should also apply the "skinny job" principle. It should not contain SQL queries or business logic manipulations inside but just call to model or operation object.
+The main idea that is hidden behind Active Job - it is an application-framework boundary, where the framework got data from to "external world" and transfer these data to you application code. It should follow the same rules as the controller does. If you follow the idea of "skinny controller", you should also apply the "skinny job" principle. It should not contain SQL queries or business logic manipulations inside but just call to model or operation object.
 
 Look at the following similarities of `ActiveJob::process` and `Controller::[action_name]` classes:
 
 * it is the first entry point where your code naturally "gets the wheel" and where you can do all the manipulations
 * this method receives parameters from the "outside worlds"
-* Browser and Job queue - are representatives of the "outside world"
+* browser and job queue - are representatives of the "outside world"
 * controller and job classes do parsing and unification of params for your code
 
 Your job should like as simple as that
