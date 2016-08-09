@@ -5,7 +5,7 @@ order: 20
 ---
 
 ## Web
-Real shame starts from the very basic of theWeb development. We are doing web apps but do not even know how the Internet (or the Web) works. That's why junior developers do not understand where from params appear and what makes a different type of HTTP requests differently. Unfortunately, it prepares the ground to believe in magic in future.
+It is a real shame that the very basics of web development are largely not understood by inexperienced developers who learn programming through Rails. We make web apps, but do not know how the Internet (or the Web) works. That's why junior developers do not understand what params are and what triggers the different types of HTTP requests. The result is that often a junior developer has a weak foundation in fundamental web principles and largely understands programming as some sort of magic. Unfortunately, with a rails-centric education in programming, a junior developer relies more on the "magic" of rails than an understanding of programming.
 
 * [Mozilla: How the Web works](https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/How_the_Web_works)
 * [What really happens when you navigate to a URL](http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/)
@@ -13,21 +13,20 @@ Real shame starts from the very basic of theWeb development. We are doing web ap
 
 If you feel confident in basic Web knowledge and want to dive deeper in all aspects, read [High-Performance Browser Networking](https://hpbn.co/) free ebook. 
 
->This book provides a hands-on overview of what every web developer needs to know about the various types of networks (WiFi, 3G/4G), transport protocols (UDP, TCP, and TLS), application protocols (HTTP/1.1, HTTP/2), and APIs available in the browser (XHR, WebSocket, WebRTC, and more) to deliver the best—fast, reliable, and resilient—user experience.
+>This book provides a hands-on overview of what every web developer needs to know about the various types of networks (WiFi, 3G/4G), transport protocols (UDP, TCP, and TLS), application protocols (HTTP/1.1, HTTP/2), and APIs available in the browser (XHR, WebSocket, WebRTC, and more) to deliver the best fast, reliable, and resilient user experience.
 
 * [High-Performance Browser Networking by Ilya Grigorik](https://hpbn.co/)
 
 ## Linux
-A lot of us come to web development with Windows desktops. But even if Ruby can be installed on Windows - I recommend using Linux machine for Ruby development. Real Desktop OS  setup or a virtual machine. Because the world of web servers (VPS) is all about Linux. You must have good Linux knowledge to do at least basic performance tuning and advanced web server setup for your real Application.  
-It requires being familiar with some Linux distribution, for example, Ubuntu or some other Top 10 distros.
+A lot of us come to web development with Windows desktops. But even if Ruby can be installed on Windows, I recommend using a Linux/Unix based machine for Ruby development. Either a machine running a dedicated Linux/Unix OS or a virtual machine running Linux/Unix in Windows works just fine. The world of web servers (VPS) is all about Linux, so it is a good idea to be very familiar with Linux and be able to perform basic Linux tasks, performance tuning, and advanced web server setup for your application within a Linux environment.
 
 * [Ubuntu](http://www.ubuntu.com/)
 * [DistroWatch TOP](http://distrowatch.com/dwres.php?resource=popularity)
 
 ## IDE
-You can write Ruby code in any text editor, but using more sophisticated IDE increases productivity.  
+You can write Ruby code in any text editor, but using a more sophisticated IDE increases productivity.  
 Editors like SublimeText and Atom require some additional plugin setup. The most full-featured IDE is RubyMine, but it is not free.  
-Due to the dynamic composition in Ruby it is hard for IDEs to do correct autocomplete most of the times, that's why RubyMine does not show it's full power. But it still provides quite a lot of additional tools integrated.
+Due to the dynamic composition in Ruby it is hard for IDEs to do correct autocomplete most of the time. That's why RubyMine does not show it's full power, but it still provides quite a lot of additional integrated tools.
 
 * [RubyMine](https://www.jetbrains.com/ruby/index.html)
 * [SublimeText](https://www.sublimetext.com/)
