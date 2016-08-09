@@ -26,7 +26,7 @@ Another ting to remember - saving Ruby data structures like Hash or Array to the
 
 Let's imagine the same page with the ranged list of posts, you want to cache just a plain data of ranged list and automatically rebuild cache when needed. You can make a cache key that includes data like last post date (when a new post is added, you cache key is changed and the page is regenerated). As you see here, to determine cache key you still need to perform one DB query (to get latest post date). It is a reasonable tradeoff of you spare 10-20 or more queries with this caching.
 
-The main rule here is - **cache key computation should be as simple as possible**. Don't make to many dependencies in the cache key.
+The main rule here is - **cache key computation should be as simple as possible**. Don't make too many dependencies in the cache key.
 
 
 * [The Benefits of Microcaching with NGINX](https://www.nginx.com/blog/benefits-of-microcaching-nginx/)
