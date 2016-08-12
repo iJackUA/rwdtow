@@ -31,5 +31,6 @@ The main rule here is - **cache key computation should be as simple as possible*
 
 * [The Benefits of Microcaching with NGINX](https://www.nginx.com/blog/benefits-of-microcaching-nginx/)
 * [**Redis**](http://redis.io/)
+* [Readthis gem](https://github.com/sorentwo/readthis)
 * [Memcached](https://memcached.org/)
 * [Why Redis beats Memcached for caching](http://www.infoworld.com/article/3063161/application-development/why-redis-beats-memcached-for-caching.html)
