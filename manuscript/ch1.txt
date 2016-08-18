@@ -26,6 +26,10 @@ It results in no pluralism of ideas, no real code reusability, as most gems are 
 
 This guide is an attempt to describe the way to build the web app with a real understanding of each component, with knowledge that is relevant in any web language and framework. To become a better web developer and demand for a better ecosystem!
 
+* [The Ruby Community: The Next Version](http://hawkins.io/2015/05/the-ruby-community-the-next-version/)
+* [Ruby’s Reputation](http://www.alanbradburne.com/Rubys-reputation/)
+* [Ruby (on Rails) ecosystem bittersweet or "we like to hate PHP"](http://stdout.in/en/post/ruby-ecosystem-bittersweet-or-we-like-to-hate-php)
+
 ## Manifesto
 
 * prefer simple solutions
