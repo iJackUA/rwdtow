@@ -1,9 +1,18 @@
 # Frontend
 
+## Sad but true story...
+
+There was a time when any web developer was a full stack. And we all made a frontend HTML/CSS "as good as we could". But now. being a backend developer (literally developing a server side code) means that your primary put your efforts in mastering backend language, getting deeper in SQL and different databases, server provisioning, and system administration. And there is less and less time for the frontend. While frontend grew from tiny pices of HTML+CSS+JavaScript to a huge monster of Frameworks. Even JavaScript developers are complaining about "how fast the World is moving forward", not to mention us "backend developers" - we are completely lost. We are still in the jQuery era. That is not so bad, that is just how it goes.
+
+* [EcmaScript 2015 / ES6 or how backend developers lost JavaScript](http://stdout.in/en/post/ecmascript-2015-es6-or-how-backend-developers-lost-javascript)
+
+But in any case, we need to keep in touch with Frontend world evolution. Ideally, it is real and possible to have limited full stack skills to be able to cover all aspects of the web product. You are not required to be able to build the new Facebook alone. But that is what I think essential:   
+
 ## HTML / CSS
-Bootstrap
-Foundation
-SemanticUI
+
+* [Bootstrap](http://getbootstrap.com/)
+* [Foundation](http://foundation.zurb.com/)
+* [SemanticUI](http://semantic-ui.com/)
 
 ## JavaScript
 
