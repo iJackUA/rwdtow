@@ -56,20 +56,28 @@ Local tunnels allows you to easily share a local web service development machine
 * supports config file 
 
 Expose `localhost:3000` as easy as 
-```{.sh}
+
+```
 ngrok http 3000
 ```  
+
 You'll get url like this `https://83832de1.ngrok.io`
 
 Another way, if you already use Vagrant - the easies way is to use **Vagrant Share**
-```{.sh}
+
+```
 vagrant share
 ```
+
 You will need to make one time registration at [https://atlas.hashicorp.com/](https://atlas.hashicorp.com/), then to run `vagrant login` with registered credentials.
 
 Vagrant detects where your HTTP server is running in your Vagrant environment and outputs the endpoint that can be used to access this share.  
 You'll get url like this `http://lucky-man-7777.vagrantshare.com`
-As a bonus it supports SSH sharing via `vagrant share --ssh`
+As a bonus it supports SSH sharing via 
+
+```
+vagrant share --ssh
+```
 
 * [Ngrok](https://ngrok.com/)
 * [Vagrant Share](https://docs.vagrantup.com/v2/share/index.html)
