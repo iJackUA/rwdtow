@@ -15,7 +15,7 @@ Testing rules:
 
 Unit tests cover code-level logic. It instantiates an object, and makes assertions on the result of a method or function call. There are two popular unit testing solutions in Ruby: Minitest and RSpec.
 
-**RSpec** is a very popular gem that provides an expressive DSL for all aspects of testing. It allows writing test in a BDD "expects" style. Its assertions tend to be human-readable, and it has lots of special extensions. However, its main advantage is also its main drawback – you need to learn a large DSL and assertion syntax. RSpec extensions make this worse, requiring you to put in quite a lot of effort to learn everything.
+**RSpec** is a very popular gem that provides an expressive DSL for all aspects of testing. It allows writing test in a BDD "expects" style. Its assertions tend to be human-readable, and it has lots of special extensions. However, its main advantage is also its main drawback – you need to learn a large DSL and assertion syntax. RSpec extensions make this worse, requiring you to put in quite a lot of effort to learn everything. RSpec has community-backed best practices that can be accessed on [betterspecs](http://betterspecs.org/).
 
 ```ruby
 RSpec.describe "Using an array as a stack" do
