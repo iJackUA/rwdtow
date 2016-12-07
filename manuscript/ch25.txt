@@ -11,6 +11,7 @@ Or a custom Deploy workflow for big projects with tools like Ansible
 
 * [DigitalOcean](https://m.do.co/c/20534050b97f) (my ref link ;) you receive $10 credit after registration)
 * [Amazon Web Services]()
+* https://github.com/open-guides/og-aws
 * [Namecheap, domains registrator](https://www.namecheap.com/?aff=62428) (my ref link ;) )
 
 ### PaaS
