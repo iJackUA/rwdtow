@@ -154,12 +154,12 @@ Look at the following similarities of `ActiveJob::process` and `Controller::[act
 * browser and job queue - are representatives of the "outside world"
 * controller and job classes do parsing and unification of params for your code
 
-Your job should like as simple as that
+Your job should look as simple as this:
 
 ```ruby
 class BigComplexJob < ApplicationJob
   queue_as :default
- 
+
   def perform(*params)
     MyComplexLogicClass.do_a_lot_of_work(params)
   end
