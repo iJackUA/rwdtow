@@ -31,6 +31,7 @@ TODO: Describe approaches like Form Model, Service Object, Context
 
 * [Gem: Active Interaction](https://github.com/orgsync/active_interaction)
 * [SOLID Design Principles](https://www.practicingruby.com/articles/solid-design-principles)
+* [Monolith to Microservices](https://medium.com/@ccverak/from-monolithics-to-microservices-e87841ce11fd)
 
 ### [Trailblazer](http://trailblazer.to)
 
