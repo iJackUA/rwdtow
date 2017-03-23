@@ -22,7 +22,7 @@ A more correct way to do caching, without tricks with total microcaching, is to 
 
 But even a file-cache could be productive if you cache operation that takes tens of seconds (the only thing to remember: file-system operation could be a performance bottleneck as disk read speed is very limited, so it should not be very often).
 
-Another ting to remember - saving Ruby data structures like Hash or Array to the external cache (file or memory based) requires to serialize it into text representation (and vice versa on reading). This operation takes CPU resources and time. Usually, it is a JSON or YAML representation and not all data structures could be represented into the string automatically. Also Ruby provides a special `Marshal` class to serialize Objects.
+Another thing to remember - saving Ruby data structures like Hash or Array to the external cache (file or memory based) requires to serialize it into text representation (and vice versa on reading). This operation takes CPU resources and time. Usually, it is a JSON or YAML representation and not all data structures could be represented into the string automatically. Also Ruby provides a special `Marshal` class to serialize Objects.
 
 Let's imagine the same page with the ranged list of posts, you want to cache just a plain data of ranged list and automatically rebuild cache when needed. You can make a cache key that includes data like last post date (when a new post is added, you cache key is changed and the page is regenerated). As you see here, to determine cache key you still need to perform one DB query (to get latest post date). It is a reasonable tradeoff of you spare 10-20 or more queries with this caching.
 
