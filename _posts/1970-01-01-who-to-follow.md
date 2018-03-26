@@ -13,3 +13,4 @@ order: 260
 | **Sandi Metz** | author of "POODR" book | [sandimetz.com](http://www.sandimetz.com/) | [@sandimetz](https://twitter.com/sandimetz) | [@skmetz](https://github.com/skmetz) |
 | **Avdi Grimm** | author of "Objects on Rails" book | [devblog.avdi.org](http://devblog.avdi.org/) | [@avdi](https://twitter.com/avdi) | [@avdi](https://github.com/avdi) |
 | **Katrina Owen** | creator of http://exercism.io, great speaker | [kytrinyx.com](http://kytrinyx.com/) | [@kytrinyx](https://twitter.com/kytrinyx) | [@kytrinyx](https://github.com/kytrinyx) |
+| **Jeremy Evans** | creator of Sequel and Roda | | [@jeremyevans0](https://twitter.com/jeremyevans0) | [@jeremyevans](https://github.com/jeremyevans) |
