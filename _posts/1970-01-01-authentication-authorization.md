@@ -23,3 +23,4 @@ Unfortunately, I do not know of a good example of [RBAC](https://en.wikipedia.or
 
 * [**Pundit**](https://github.com/elabs/pundit)
 * [CanCanCan](https://github.com/CanCanCommunity/cancancan)
+* [kan](http://github.com/davydovanton/kan)
