@@ -22,4 +22,3 @@ TODO: Add gems that help to track N+1 queries and SQL performance
 Sometimes, in the development stage, you need to measure the performance of a couple of different implementations. To get measurable timing results, the code being benchmarked should be run repeatedly, for many iterations. There are ready-made tools that can help with such measurements.
 
 * [Benchmark ips](https://github.com/evanphx/benchmark-ips)
-* [Scientist](https://github.com/github/scientist)
