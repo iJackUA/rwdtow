@@ -2,4 +2,4 @@ source 'https://rubygems.org'
 
 gem 'execjs'
 gem 'therubyracer'
-gem 'github-pages', '89'
+gem 'github-pages', '192'
