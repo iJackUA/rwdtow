@@ -27,6 +27,7 @@ Editors like SublimeText and Atom require some additional plugin setup
 The most full-featured IDE is RubyMine, but it is not free.
 Due to the dynamic nature of Ruby, it is hard for IDEs to do correct autocompletion most of the time. This is why RubyMine is not as powerful as similar IDEs for other languages, but it still provides quite a lot of additional integrated tools.
 
+* [Visual Studio Code (VSCode)](https://code.visualstudio.com/)
 * [RubyMine](https://www.jetbrains.com/ruby/index.html)
 * [SublimeText](https://www.sublimetext.com/)
 * [Atom](https://atom.io/)
